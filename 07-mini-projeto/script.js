@@ -1,20 +1,24 @@
-somar(27)
 
-function somar(n1) {
-   let multiplos3 = 0;
-   let multiplos5 = 0;
+let nota = [100, 70, 80]
 
-   console.log("Multiplos de 3:")
-   for (let i = 0; i <= n1; i += 3) {
-    multiplos3 += i
-    console.log(multiplos3)
-   } 
-   console.log("Multiplos de 5:")
-   for (let i = 0; i <= n1; i += 5) {
-    multiplos5 += i
-    console.log(multiplos5)
-   } 
-   console.log("Soma dos multiplos de 3 com os multiplos de 5:")
-   console.log(multiplos3 + multiplos5)
+console.log(resultado(nota))
+
+function resultado(provas) {
+   const media = calcularMedia(provas)
+   if (media < 49) return "F";
+   if (media < 59) return "E";
+   if (media < 69) return "D";
+   if (media < 79) return "C";
+   if (media < 89) return "B";
+   if (media <= 100) return "A";
+}
+
+function calcularMedia(notas) {
+   let resultado = 0
+   for (i of notas) {
+      resultado += i
+   }
+   console.log(resultado / notas.length)
+   return resultado / notas.length
    
 }
